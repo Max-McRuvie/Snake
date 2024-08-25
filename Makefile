@@ -1,33 +1,44 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c11  # Ensure standard C11 is used
-LDFLAGS = -lgdi32  # Linker flags for Windows GDI library
+CFLAGS = -Wall -Wextra -std=c11
+LDFLAGS = -lgdi32
 
 # Output binary name
 TARGET = build/Snake
 
+# Add .exe extension on Windows
+ifeq ($(OS),Windows_NT)
+    TARGET := $(TARGET).exe
+    RM = del /Q
+else
+    RM = rm -f
+endif
+
 # Source and object directories
 SRCDIR = src
-OBJDIR = build/repository
+OBJDIR = build/obj
 
 # Source files
 SRCS = $(wildcard $(SRCDIR)/*.c)
 
-# Object files (replace .c with .o in SRCS, but in OBJDIR)
+# Object files
 OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 # Default target
 all: $(TARGET)
 
+# Ensure build and obj directories exist
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
 # Build rule
-$(TARGET): $(OBJS)
+$(TARGET): $(OBJDIR) $(OBJS)
 	$(CC) -o $(TARGET) $(OBJS) $(LDFLAGS)
 
 # Rule for object files
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@mkdir -p $(OBJDIR)  # Create the object directory if it doesn't exist
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-# Clean rule
+# Clean rule (cross-platform)
 clean:
-	$(RM) -f $(OBJDIR)/*.o $(TARGET)
+	$(RM) $(OBJDIR)/*.o $(TARGET)
