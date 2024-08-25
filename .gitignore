@@ -41,5 +41,9 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Build files
+# Object files
 *.o
+
+# Build directories
+/build/
+obj/
