@@ -9,9 +9,6 @@ TARGET = build/Snake
 # Add .exe extension on Windows
 ifeq ($(OS),Windows_NT)
     TARGET := $(TARGET).exe
-    RM = del /Q
-else
-    RM = rm -f
 endif
 
 # Source and object directories
@@ -39,6 +36,6 @@ $(TARGET): $(OBJDIR) $(OBJS)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-# Clean rule (cross-platform)
+# Clean rule
 clean:
-	$(RM) $(OBJDIR)/*.o $(TARGET)
+	rm -f $(OBJDIR)/*.o $(TARGET)
