@@ -6,8 +6,8 @@
 #define USE_CLEAR_ON_UNIX 1
 
 // game configurations
-#define ROW 8
-#define COL 8
+#define ROW 10
+#define COL 15
 #define SNAKE_SYMBOL '$'
 #define COLLECTABLE_SYMBOL 'F'
 
