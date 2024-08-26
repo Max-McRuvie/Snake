@@ -1,6 +1,6 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c11
+CFLAGS = -Wall -Wextra -std=c11 -Iinclude
 LDFLAGS = -lgdi32
 
 # Output binary name
@@ -39,3 +39,4 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 # Clean rule
 clean:
 	rm -f $(OBJDIR)/*.o $(TARGET)
+	rm -rf $(OBJDIR)
