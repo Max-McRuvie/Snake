@@ -9,7 +9,7 @@ void print_grid(char grid[ROW][COL]){
     for(i = 0; i < ROW; i++){
         printf("|");
         for(j = 0; j < COL; j++){
-            printf(" %c  ", grid[i][j]);
+            printf("%c ", grid[i][j]);
         }
         printf("|");
         printf("\n");
