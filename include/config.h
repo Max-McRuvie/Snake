@@ -10,5 +10,6 @@
 #define COL 15
 #define SNAKE_SYMBOL '$'
 #define COLLECTABLE_SYMBOL 'F'
+#define BORDER_SYMBOL 'X'
 
 #endif // CONFIG_H
