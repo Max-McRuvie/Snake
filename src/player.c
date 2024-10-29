@@ -6,7 +6,7 @@
 
 // Function to initialize the player's position on the grid
 void initialise_player(char grid[ROW][COL], int player_row, int player_col) {
-    grid[player_row][player_col] = '$';  // Place player at the initial position
+    grid[player_row][player_col] = PLAYER_SYMBOL;  // Place player at the initial position
 }
 
 // Function to get the new position based on keyboard input
@@ -30,11 +30,11 @@ void update_player_position(char grid[ROW][COL], int* player_row, int* player_co
     }
 
     // Clear the old player position
-    grid[*player_row][*player_col] = ' ';
+    grid[*player_row][*player_col] = EMPTY_SPACE;
     // Update the player's new position
     *player_row = new_row;
     *player_col = new_col;
-    grid[*player_row][*player_col] = '$';  // Place the player at the new position
+    grid[*player_row][*player_col] = PLAYER_SYMBOL;  // Place the player at the new position
 }
 
 // Main function to move the player

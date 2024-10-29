@@ -34,7 +34,7 @@ void create_border(char grid[ROW][COL]){
                 grid[i][j] = BORDER_SYMBOL;
             }
             else {
-                grid[i][j] = ' ';
+                grid[i][j] = EMPTY_SPACE;
             }
         }
     }
@@ -53,7 +53,7 @@ void spawn_collectible(char grid[ROW][COL]){
     bool finished = false;
     
     while(!finished){
-        if(grid[rd_num_row][rd_num_col] == SNAKE_SYMBOL || grid[rd_num_row][rd_num_col] == COLLECTABLE_SYMBOL){
+        if(grid[rd_num_row][rd_num_col] == PLAYER_SYMBOL || grid[rd_num_row][rd_num_col] == COLLECTABLE_SYMBOL){
             rd_num_row = rand() % (row_max - row_min + 1) + row_min;
             rd_num_col = rand() % (col_max - col_min + 1) + col_min;
         } else {

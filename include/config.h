@@ -8,8 +8,10 @@
 // game configurations
 #define ROW 10
 #define COL 15
-#define SNAKE_SYMBOL '$'
+#define PLAYER_SYMBOL '$'
 #define COLLECTABLE_SYMBOL 'F'
 #define BORDER_SYMBOL 'X'
+#define EMPTY_SPACE ' '
+
 
 #endif // CONFIG_H

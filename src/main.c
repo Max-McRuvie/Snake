@@ -13,8 +13,8 @@ int main(){
 
     // Initialize the grid
     create_border(grid);
+    initialise_player(grid, player_row, player_col);
     spawn_collectible(grid);
-    grid[player_row][player_col] = SNAKE_SYMBOL;  // Place the player on the grid
 
     // Game loop
     while (1) {
