@@ -86,5 +86,8 @@ void move_player(char grid[ROW][COL], int* player_row, int* player_col, int* sco
     // If the move is valid, update the player's position
     if (is_valid_move(grid, new_row, new_col)) {
         update_player_position(grid, player_row, player_col, new_row, new_col, score);
+    } else {
+        printf("Game Over!\n");
+        exit(0);
     }
 }
