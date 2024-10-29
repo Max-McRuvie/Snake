@@ -1,17 +1,16 @@
-#include <stdio.h>
-#include <stdbool.h> 
-#include <windows.h>
 #include "config.h"
 #include "grid.h"
 #include "clear_screen.h"
 #include "player.h"
+#include <stdio.h>
+#include <stdbool.h> 
+#include <windows.h>
 
 int main() {
     char grid[ROW][COL];
     int player_row = 5, player_col = 5, score = 0;
     Direction current_direction = RIGHT;  // Initial direction
     
-
     // Initialize the grid
     create_border(grid);
     initialise_player(grid, player_row, player_col);

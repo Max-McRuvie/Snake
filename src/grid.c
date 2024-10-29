@@ -1,7 +1,8 @@
 #include "grid.h"
 #include "config.h"
 #include <stdio.h>
-#include <stdbool.h> 
+#include <stdbool.h>
+#include <stdlib.h>
 
 // Function to render game in the terminal
 void render_game(char grid[ROW][COL], int score){
