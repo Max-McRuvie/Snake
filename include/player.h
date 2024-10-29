@@ -10,6 +10,10 @@
 
 typedef enum {UP, DOWN, LEFT, RIGHT} Direction;
 
+typedef struct {
+    int row;
+    int col;
+} Position;
 
 void initialise_player(char grid[ROW][COL], int player_row, int player_col);
 
